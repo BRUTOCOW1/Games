@@ -1,0 +1,18 @@
+from re import L
+
+
+r = open("common6.txt", "r")
+s = r.readlines()
+sixes = []
+for x in s:
+    yes = True
+    if len(x) == 6:
+        for chart in x:
+            if x.count(chart) > 1:
+                yes = False
+        if yes:
+            sixes.append(x)
+r.close()
+dump = open('common7.txt', 'w')
+dump.writelines(sixes)
+dump.close()
